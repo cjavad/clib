@@ -1,36 +1,30 @@
 #include <iostream>
-class Param {
-    public:
-        std::string key;
-        std::string value;
-        Param(std::string key_c, std::string value_c);
+#include "param.hpp"
+#include "../../socket/src/unix_client.hpp"
 
+class http {
+    public:
+        std::string get(std::string url, std::string query_s);
+        std::string post(std::string url, std::string query_s);
 };
 
-Param::Param(std::string key_c, std::string value_c){
-            key = key_c;
-            value = value_c;
+std::string http::get(std::string url, std::string query_s){
+    Client c(url, 80, 2048);
+    std::string request = "GET " + query_s + " HTTP/1.1";
+    std::cout << request << std::endl;
+    c.send(request);
+    return c.recv(true);
 }
 
-
-std::string query(std::string base_url, Param vec[], int len)
-{
-    base_url += "?place_holder=true";
-    for (size_t i = 0; i < len; i++)
-    {
-        std::string key = vec[i].key;
-        std::string value = vec[i].value;
-        base_url += "&" + key + "=" + value;
-    }   
-    return base_url;
+std::string http::post(std::string url, std::string query_s){
+    Client c(url, 80, 2048);
+    std::string request = "POST " + query_s + " HTTP/1.1";
+    std::cout << request << std::endl;
+    c.send(request);
+    return c.recv(true);
 }
 
-int main()
-{
-    Param param1("key_is", "value_lol");
-    Param param2("key_is", "value_lol");
-    Param v[] = {param1, param2};
-
-    std::cout << query("https://a", v, sizeof(v)/sizeof(Param)) << std::endl;
-    return 0;
+int main(){
+    http c;
+    std::cout << c.get("https://google.com", "/index.html") << std::endl;
 }
