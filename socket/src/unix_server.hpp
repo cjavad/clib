@@ -1,5 +1,5 @@
 /*
-include all nesesary libaries for this to work LINUX/MAC only for now
+include all nesesary libaries for this to work on LINUX/MAC 
 */
 
 #include <iostream>
