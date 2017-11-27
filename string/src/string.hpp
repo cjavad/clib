@@ -21,8 +21,9 @@ ______________________
 [public] String::swapcase(); returns a string with swapped cases. uses String::swap_case(char c);
 */
 class String {
-    std::string self;
     private:
+        //the actaul string
+        std::string self;
         //swap case of letters
         static char swap_case(char c){if (std::isupper(c)) {return std::tolower(c);} else {return std::toupper(c);}}
 
