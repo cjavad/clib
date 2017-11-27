@@ -17,6 +17,7 @@
         "locale": "cpp",
         "memory": "cpp",
         "tuple": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "system_error": "cpp"
     }
 }

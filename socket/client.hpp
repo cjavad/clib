@@ -1,5 +1,5 @@
 #ifdef _WIN32
-	#include "src/win_client.hpp"
+	#include "src/client/win_client.hpp"
 #else
-	#include "src/unix_client.hpp"
+	#include "src/client/unix_client.hpp"
 #endif 
