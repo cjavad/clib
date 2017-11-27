@@ -1,4 +1,4 @@
 #ifdef _WIN32
-	#include "src/win_server.hpp"
+	#include "src/server/win_server.hpp"
 #else
-	#include "src/unix_server.hpp"
+	#include "src/server/unix_server.hpp"
