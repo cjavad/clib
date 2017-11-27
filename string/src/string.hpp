@@ -92,6 +92,8 @@ Basic_List class. functions =>
 ______________________________
 a vector for each datatype we support
 a append for each datatype we support
+a clear for each datatype we support
+a size for each datatype we support
 a get for each datatype we support
 
 a basic list system that powers List
