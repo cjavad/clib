@@ -15,7 +15,7 @@ int main(){
 
     Client c(host, port, buffer_size);
 
-    c.send("GET /search?q=cpp HTTP/1.1");
+    c.send("GET /search?q=cpp HTTP/1.1\r\nHost: " + host + "\r\nConnection: close\r\n\r\n");
     //the first arg is if you want to read the entire stream or just the amount you have specified
     std::cout << c.recv(true) << std::endl;
 }
