@@ -50,7 +50,7 @@ void Client::send(std::string data){
 	write(sockfd, data.c_str(), strlen(data.c_str()));
 }
 
-std::string Client::recv(bool isToClose = false, int buffer_size = 1024){
+std::string Client::recv(bool isToClose = false, int buffer_size = 0){
 	/*
 	Varibles.
 	out is the returned value. STRING
