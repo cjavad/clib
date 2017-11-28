@@ -11,10 +11,12 @@ BAS Testing of the string libary (Big Ass String)
 int main(){
     std::string bac = big_ass_string;
     String bas(bac);
+    String sep("");
     std::vector<std::string> v = bas.split("a");
     for (size_t i = 0; i < v.size(); i++)
     {
         std::cout << v[i] << std::endl;
     }
+    std::cout << sep.join(v) << std::endl;
     return 0;
 }
