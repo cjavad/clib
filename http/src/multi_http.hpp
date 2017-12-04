@@ -1,6 +1,5 @@
 #include <iostream>
-#include "param.hpp"
-#include "../../socket/src/client/unix_client.hpp"
+#include "../../socket/client.hpp"
 
 class HTTP {
         public:

@@ -10,8 +10,8 @@ BAS Testing of the string libary (Big Ass String)
 
 int main(){
     std::string bac = big_ass_string;
-    String bas(bac);
-    String sep("");
+    String bas = bac;
+    String sep = "";
     std::vector<std::string> v = bas.split("a");
     for (size_t i = 0; i < v.size(); i++)
     {

@@ -28,8 +28,13 @@ class String {
         static char swap_case(char c){if (std::isupper(c)) {return std::tolower(c);} else {return std::toupper(c);}}
 
     public:
-        //constuctor
-        String(std::string str);
+        //conversion types
+        String(const std::string& x){self = x;}
+        String(const char* x){self = x;}
+        String& operator= (const std::string& x){return *this;}
+        String& operator= (const char& x){return *this;}
+        //to string
+        std::string to_str(){return self;}
         //spliting function
         std::vector<std::string> split(std::string sep);
         //joining function
@@ -41,13 +46,6 @@ class String {
         std::string swapcase(){std::string str = self; std::transform(str.begin(), str.end(), str.begin(), this->swap_case); return str;}
 };
 
-/*
-class constuctor
-*/
-
-String::String(std::string str){
-    self = str;
-}
 
 /*
 basic splitter
