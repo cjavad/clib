@@ -2,7 +2,7 @@
 #include "../string.hpp"
 
 int main(){
-    String a = "HELLO WOLRD";
+    String a = "HELLO WORLD";
     std::cout << a.to_str() << std::endl;
     return 0;
 }
