@@ -21,6 +21,8 @@
         "system_error": "cpp",
         "algorithm": "cpp",
         "__functional_03": "cpp",
-        "functional": "cpp"
+        "functional": "cpp",
+        "__locale": "cpp",
+        "ios": "cpp"
     }
 }

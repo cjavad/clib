@@ -1,27 +1,11 @@
 #include <iostream>
-#include <unistd.h>
-#include <term.h>
-
-void ClearScreen()
-  {
-  if (!cur_term)
-    {
-    int result;
-    setupterm( NULL, STDOUT_FILENO, &result );
-    if (result <= 0) return;
-    }
-
-  putp( tigetstr( "clear" ) );
-  }
+#include "base64.hpp"
 
 
 int main(){
-    while (true)
-    {
-        ClearScreen();
-        std::cout << "^-^";
-        ClearScreen();
-        std::cout << "^_^";
-    }
-    
+  std::string a = b64_encode("ENCODE ME");
+  std::string b = b64_decode(a);
+  std::cout << a << std::endl;
+  std::cout << b << std::endl;
+  return 0;
 }
