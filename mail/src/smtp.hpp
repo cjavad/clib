@@ -47,11 +47,15 @@ std::vector<std::string> SMTP::compose(std::string to, std::string subject, std:
         msg.push_back(b64_encode(username) + "\r\n");
         msg.push_back(b64_encode(password) + "\r\n");
     }
-    msg.push_back("RCPT TO: " +  to + "\r\n");
     msg.push_back("MAIL FROM: " + username + "\r\n");
-    msg.push_back(subject + "\r\n\r\n");
+    msg.push_back("RCPT TO: "+ to +"\r\n" );
+    msg.push_back("DATA\r\n");
+    msg.push_back("From: " + username + "\r\n");
+    msg.push_back("To: " + to + "\r\n");
+    msg.push_back("Subject: " + subject + "\r\n\r\n");
     msg.push_back(body + "\r\n");
     msg.push_back(".\r\n");
+    msg.push_back("QUIT\r\n");
     // return message
     return msg;
 }

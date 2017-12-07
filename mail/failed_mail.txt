@@ -1,0 +1,33 @@
+--138BE454BA8.1512488481/Fatis-MacBook-Pro.local
+Content-Description: Delivery report
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; Fatis-MacBook-Pro.local
+X-Postfix-Queue-ID: 138BE454BA8
+X-Postfix-Sender: rfc822; javad@Fatis-MacBook-Pro.local
+Arrival-Date: Tue,  5 Dec 2017 16:41:19 +0100 (CET)
+
+Final-Recipient: rfc822; "FROM:"@Fatis-MacBook-Pro.local
+Original-Recipient: rfc822; "FROM:"
+Action: failed
+Status: 5.1.1
+Diagnostic-Code: X-Postfix; unknown user: "from:"
+
+--138BE454BA8.1512488481/Fatis-MacBook-Pro.local
+Content-Description: Undelivered Message
+Content-Type: message/rfc822
+
+Return-Path: <javad@Fatis-MacBook-Pro.local>
+Received: by Fatis-MacBook-Pro.local (Postfix, from userid 502)
+        id 138BE454BA8; Tue,  5 Dec 2017 16:41:19 +0100 (CET)
+To: "FROM:"@Fatis-MacBook-Pro.local, javadshafique@gmail.com
+Subject: RCPT TO: javadshafique@hotmail.com
+Message-Id: <20171205154120.138BE454BA8@Fatis-MacBook-Pro.local>
+Date: Tue,  5 Dec 2017 16:41:19 +0100 (CET)
+From: javad@Fatis-MacBook-Pro.local (Javad Shafique)
+
+cpp
+
+Hello From c++
+
+--138BE454BA8.1512488481/Fatis-MacBook-Pro.local--
