@@ -1,24 +1,35 @@
 #include <iostream>
+#include <vector>
+#include "http_base.hpp"
+#include "param.hpp"
 #include "../../socket/client.hpp"
 
 class HTTP {
         public:
-         static std::string get(std::string url, std::string query_s);
-         static std::string post(std::string url, std::string query_s);
+            static std::string get(std::string url, std::string query_s);
+            static std::string post(std::string url, std::string query_s);
 };
 
-std::string HTTP::get(std::string url, std::string query_s){
-    Client c(url, 80, 2048);
-    std::string request = "GET " + query_s + " HTTP/1.1\r\nHost: " + url + "\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 ()\r\n\r\n";
-    std::cout << request << std::endl;
-    c.send(request);
-    return c.recv(true);
+std::string HTTP::get(std::string url){
+    std::vector<std::string> uri = split_url(url);
+    if(uri[0] == ("https" || "HTTPS")){
+        int port = 443;
+        bool https = true;
+    } else {
+        int port = 80;
+        bool https = false;
+    }
+    return request("GET", uri[1], port, uri[2], https);
 }
 
-std::string HTTP::post(std::string url, std::string query_s){
-    Client c(url, 80, 2048);
-    std::string request = "POST " + query_s + " HTTP/1.1\r\nHost: " + url + "\r\nConnection: close\r\nUser-Agent: Mozilla/5.0 ()\r\n\r\n";
-    std::cout << request << std::endl;
-    c.send(request);
-    return c.recv(true);
+std::string HTTP::post(std::string url){
+        std::vector<std::string> uri = split_url(url);
+    if(uri[0] == ("https" || "HTTPS")){
+        int port = 443;
+        bool https = true;
+    } else {
+        int port = 80;
+        bool https = false;
+    }
+    return request("POST", uri[1], port, uri[2], https);
 }
