@@ -6,6 +6,7 @@ Only a few of the libaries is working those include:
 - socket 
 - http
 - string
+- fs (kinda works just a few bugs left)
 
 Here is some examples with the socket client:
 ```c++
