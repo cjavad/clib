@@ -1,7 +1,11 @@
 # clib
 A bunch of easy to use c++ libaries (NOTE: some libaries migth be compateble with c)
 
-    windows support is comming soon!
+Only a few of the libaries is working those include:
+
+- socket 
+- http
+- string
 
 Here is some examples with the socket client:
 ```c++
