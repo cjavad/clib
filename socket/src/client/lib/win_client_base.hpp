@@ -1,3 +1,4 @@
+/* Copyright (c) 2017 Javad Shafique */
 /// Defining _WINSOCKAPI_ so windows.h wont include winsock.h
 #define _WINSOCKAPI_ 
 #include <windows.h>

@@ -1,3 +1,4 @@
+/* Copyright (c) 2017 Javad Shafique */
 #include "lib/unix_server_base.hpp"
 
 

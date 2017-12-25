@@ -1,3 +1,4 @@
+/* Copyright (c) 2017 Javad Shafique */
 /*
 include all nesesary libaries for this to work on LINUX/MAC 
 */

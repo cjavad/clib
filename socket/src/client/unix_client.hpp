@@ -1,3 +1,4 @@
+/* Copyright (c) 2017 Javad Shafique */
 #include "lib/unix_client_base.hpp"
 
 Client::Client(std::string host, int port, int buffer_size){

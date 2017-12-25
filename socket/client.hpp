@@ -1,3 +1,4 @@
+/* Copyright (c) 2017 Javad Shafique */
 //check if defined
 #ifndef _CLIBSOCK_
 // if not define

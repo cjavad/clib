@@ -1,3 +1,5 @@
+/* Copyright (c) 2017 Javad Shafique */
+// Include win base
 #include "lib/win_client_base.hpp"
 
 Client::Client(std::string host, int port, int buffer_size = 2048) {
