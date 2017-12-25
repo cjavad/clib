@@ -1,6 +1,9 @@
 #include <fstream>
 #include <iostream>
+#include <string>
 #include <vector>
+#include <iostream>
+#include <stdio.h>
 
 using std::ios;
 
@@ -12,8 +15,14 @@ class open {
         //constructor
         open(std::string filename, std::string mode);
         //write to file
-        void write(std::string in) {
-            file << in.c_str();
+        void write(std::string in, std::string end = "\n") {
+            file << (in + end).c_str();
+        }
+        //write vector to file
+        void writelines(std::vector<std::string> in, std::string end = "\n") {
+            for(int i; i < in.size(); i++) {
+                write(in[i], end);
+            }
         }
         //read intire file file
         std::string read() {
@@ -54,7 +63,7 @@ open::open(std::string filename, std::string mode) {
     } else if ( mode == "r+" ) {
         file.open(filename, ios::out | ios::in);
     } else if ( mode == "a" ) {
-        file.open(filename, ios::in | ios::app);
+        file.open(filename, ios::app | ios::in);
     } else if( mode == "rb" ) {
         file.open(filename, ios::out | ios::binary);
     } else if ( mode == "wb" ) {
