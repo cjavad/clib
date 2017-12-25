@@ -17,6 +17,6 @@ std::string request(std::string method, std::string host, int port, std::string 
     // if you want the string and send it later
     if(ReturnString){ return request; }
     // else make the request
-    c.send(request);
-    return c.recv(true);
+    c.say(request);
+    return c.hear(true);
 }

@@ -69,7 +69,7 @@ std::string SMTP::send(std::vector<std::string> msg)
     Client sock(host, port, 2048);
     for (size_t i = 0; i < msg.size(); i++)
     {
-        sock.send(msg[i]);
+        sock.say(msg[i]);
     }
-    return sock.recv(true);
+    return sock.hear(true);
 }

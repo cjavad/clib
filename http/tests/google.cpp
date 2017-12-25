@@ -1,6 +1,6 @@
 #include <iostream>
-#include "../src/multi_http.hpp"
+#include "../http.hpp"
 
 int main(){
-    std::cout << HTTP::get("useragentapi.com", "/") << std::endl;
+    std::cout << HTTP::get("http://google.com/?q=cpp") << std::endl;
 }

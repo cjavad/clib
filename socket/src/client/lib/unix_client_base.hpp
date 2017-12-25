@@ -20,7 +20,7 @@ class Client {
 
     public:
 		Client(std::string host, int port, int buffer_size);
-		std::string recv(bool isToClose, int buffer_size);
-		void send(std::string data);
+		std::string hear(bool isToClose, int buffer_size);
+		void say(std::string data);
 		void destroy();
 };

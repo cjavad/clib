@@ -6,30 +6,35 @@
 
 class HTTP {
         public:
-            static std::string get(std::string url, std::string query_s);
-            static std::string post(std::string url, std::string query_s);
+            static std::string get(std::string url);
+            static std::string post(std::string url);
 };
 
 std::string HTTP::get(std::string url){
     std::vector<std::string> uri = split_url(url);
-    if(uri[0] == ("https" || "HTTPS")){
-        int port = 443;
-        bool https = true;
+    int port;
+    bool https;
+    if(uri[0] == "https"){
+        port = 443;
+        https = true;
     } else {
-        int port = 80;
-        bool https = false;
+        port = 80;
+        https = false;
     }
     return request("GET", uri[1], port, uri[2], https);
 }
 
 std::string HTTP::post(std::string url){
-        std::vector<std::string> uri = split_url(url);
-    if(uri[0] == ("https" || "HTTPS")){
-        int port = 443;
-        bool https = true;
+    std::vector<std::string> uri = split_url(url);
+    int port;
+    bool https;
+
+    if(uri[0] == "https" ){
+        port = 443;
+        https = true;
     } else {
-        int port = 80;
-        bool https = false;
+        port = 80;
+        https = false;
     }
     return request("POST", uri[1], port, uri[2], https);
 }

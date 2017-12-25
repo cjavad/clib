@@ -4,5 +4,6 @@
 
 int main() {
 	Client c("google.com", 80, 1024);
-	return 0;
+	c.say("GET / HTTP/1.1\r\n\r\n");
+	printf("%s\n", c.hear().c_str());
 }

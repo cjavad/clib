@@ -33,3 +33,6 @@ int main(){
 }
 
 ```
+
+### Requirements:
+for now it's just openssl

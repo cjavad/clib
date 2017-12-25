@@ -23,6 +23,10 @@
         "__functional_03": "cpp",
         "functional": "cpp",
         "__locale": "cpp",
-        "ios": "cpp"
+        "ios": "cpp",
+        "ostream": "cpp",
+        "xlocale": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp"
     }
 }

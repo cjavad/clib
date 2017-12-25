@@ -46,11 +46,11 @@ Client::Client(std::string host, int port, int buffer_size){
 	sockfd = sock;
 }
 
-void Client::send(std::string data){
+void Client::say(std::string data){
 	write(sockfd, data.c_str(), strlen(data.c_str()));
 }
 
-std::string Client::recv(bool isToClose = false, int buffer_size = 0){
+std::string Client::hear(bool isToClose = false, int buffer_size = 0){
 	/*
 	Varibles.
 	out is the returned value. STRING
