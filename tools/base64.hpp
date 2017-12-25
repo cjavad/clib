@@ -249,37 +249,45 @@ class Base64 {
     if(c == '/') return 63;
     return 255;
   }
-};
+}; //Base64 class
 
+
+/*
+ENCODE/DECODE Functions
+*/
 std::string b64_encode(const std::string &input, bool strip_padding = false) {
-  static std::string encoded;
-  static std::string decoded;
-
+  static std::string encoded; // define output string
+  // resize string for space for the base64 string
   encoded.resize(Base64::EncodedLength(input));
+  // try to decode string
   if (!Base64::Encode(input.c_str(), input.size(), &encoded[0], encoded.size())) {
     std::cout << "Failed to encode input string" << std::endl;
-    return "false";
+    return "";
   }
-
+  //strip it if needed
   if (strip_padding) Base64::StripPadding(&encoded);
-
+  // and return string
   return encoded;
 }
 
 
 std::string b64_decode(const std::string &input, bool strip_padding = false){
+  // convert input
   static std::string encoded = input.c_str();
+  // define out string
   static std::string decoded;
 
-
+  // check if it needs to be stripped
   if (strip_padding) Base64::StripPadding(&encoded);
-
+  // resize out string 
   decoded.resize(Base64::DecodedLength(encoded));
+  // try to decode
   if (!Base64::Decode(encoded.c_str(), encoded.size(), &decoded[0], decoded.size())) {
     std::cout << "Failed to decode encoded string" << std::endl;
-    return "false";
+    return "";
   }
-
+  
+  // and return decoded
   return decoded;
 }
 
