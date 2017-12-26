@@ -1,1 +1,0 @@
-clib/crypto is an wrapper for Cryptopp
