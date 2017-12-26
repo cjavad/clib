@@ -40,4 +40,4 @@ int main(){
 ```
 
 ### Requirements:
-for now it's just openssl
+for now it's just Cryptopp for the crypto libary

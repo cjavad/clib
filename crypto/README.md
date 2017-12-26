@@ -1,1 +1,1 @@
-clib/crypto is an wrapper for openssl
+clib/crypto is an wrapper for Cryptopp
