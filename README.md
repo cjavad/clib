@@ -34,10 +34,8 @@ and even easier with the http lib
 #include "clib/http/src/multi_http.hpp"
 
 int main(){
-    std::cout << HTTP::get("google.com", "/search?q=cpp") << std::endl;
+    // automatic https detection
+    std::cout << HTTP::get("https://google.com/search?q=cpp") << std::endl;
 }
 
-```
-
-### Requirements:
-for now it's just Cryptopp for the crypto libary
+``` 
