@@ -34,3 +34,7 @@
 # .vs and .vscode folders
 .vs/
 .vscode/
+
+# test files
+
+*/tests/*.*
